@@ -5,24 +5,19 @@ use Yii;
  /**
      * Send emails to subscribers with contents of news
      * @param array $subscribers
-     * @param array $newsList
      */
  
 class Sender {
-    public static function run($subscribers, $newsList) {
+    public static function run($subscribers) {
         
-        $count = 0;
         foreach($subscribers as $subscriber) {
-            $result = Yii::$app->mailer->compose('/mailer/newslist', ['newsList' => $newsList,
-                    ])
+            $result = Yii::$app->mailer->compose('/mailer/letter')
                     ->setFrom('drobotkot@gmail.com')
                     ->setTo($subscriber['email'])
                     ->setSubject('Тема сообщения')
                     ->send();
-           if ($result) {
-                $count++;
-        }
+          var_dump($result);
     }
-    return $count;
+    
     }
 }

@@ -40,6 +40,7 @@ return [
         'thousandSeparator' => ' ',
         'currencyCode' => 'EUR',
    ],
+        
     ],
     'params' => $params,
 ];
