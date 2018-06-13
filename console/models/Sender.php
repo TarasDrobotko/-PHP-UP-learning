@@ -2,11 +2,16 @@
 
 namespace console\models;
 use Yii;
-/**
- * @author Admin
- */
+ /**
+     * Send emails to subscribers with contents of news
+     * @param array $subscribers
+     * @param array $newsList
+     */
+ 
 class Sender {
     public static function run($subscribers, $newsList) {
+        
+        $count = 0;
         foreach($subscribers as $subscriber) {
             $result = Yii::$app->mailer->compose('/mailer/newslist', ['newsList' => $newsList,
                     ])
@@ -14,7 +19,10 @@ class Sender {
                     ->setTo($subscriber['email'])
                     ->setSubject('Тема сообщения')
                     ->send();
-            var_dump($result);
+           if ($result) {
+                $count++;
         }
+    }
+    return $count;
     }
 }

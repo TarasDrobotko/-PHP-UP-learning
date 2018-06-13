@@ -34,6 +34,12 @@ return [
            'class' => 'common\components\StringHelper',
         ],
         
+        'formatter' => [
+        'dateFormat' => 'dd.MM.yyyy',
+        'decimalSeparator' => ',',
+        'thousandSeparator' => ' ',
+        'currencyCode' => 'EUR',
+   ],
     ],
     'params' => $params,
 ];
