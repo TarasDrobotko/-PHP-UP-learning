@@ -1,7 +1,7 @@
 <?php
 return [
     'adminEmail' => 'drobotkot@gmail.com',
-    'maxNewsInList' => 2,
+    'maxNewsInList' => 5,
     'shortTextLimit' => 58,
     'shortByWords' => 6,
 ];

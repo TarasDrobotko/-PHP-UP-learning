@@ -1,9 +1,7 @@
 <?php
+
 $params = array_merge(
-    require __DIR__ . '/../../common/config/params.php',
-    require __DIR__ . '/../../common/config/params-local.php',
-    require __DIR__ . '/params.php',
-    require __DIR__ . '/params-local.php'
+        require __DIR__ . '/../../common/config/params.php', require __DIR__ . '/../../common/config/params-local.php', require __DIR__ . '/params.php', require __DIR__ . '/params-local.php'
 );
 
 return [
@@ -14,7 +12,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'enableCsrfValidation'=> false,
+            'enableCsrfValidation' => false,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -37,7 +35,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-       
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -47,26 +44,26 @@ return [
                 'news/count' => 'count/index',
             ],
         ],
-        
         'stringHelper' => [
-           'class' => 'common\components\StringHelper',
+            'class' => 'common\components\StringHelper',
         ],
-        
         // File config/main.php: 
-'mailer' => [
-    'class' => 'yii\swiftmailer\Mailer',
-    'useFileTransport' => false,
-    'transport' => [
-        'class' => 'Swift_SmtpTransport',
-        'host' => 'smtp.gmail.com',
-        'username' => 'drobotkot@gmail.com',
-        'password' => 'ttcvpctbntitolzf',
-        'port' => '587',
-        'encryption' => 'tls',
- 
-    ],
-],
-        
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'drobotkot@gmail.com',
+                'password' => 'ttcvpctbntitolzf',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+        ],
     ],
     'params' => $params,
+    'aliases' => [
+        '@files' => '/var/www/project/frontend/web/files',
+        '@photos' => '@files/photos',
+    ]
 ];
