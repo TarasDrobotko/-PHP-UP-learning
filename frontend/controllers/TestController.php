@@ -21,6 +21,8 @@ class TestController extends Controller {
     }
     
     public function actionView($id) {
+        
+        
       
         $item = Test::getItem($id);
         
