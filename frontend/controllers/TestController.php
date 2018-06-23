@@ -12,6 +12,7 @@ class TestController extends Controller {
          $max = Yii::$app->params['maxNewsInList'];
          
          $list = Test::getNewsList($max);
+         
          $listByWords = Test::getNewsListByWords($max);
         return $this->render('index', [
             'list' => $list,
