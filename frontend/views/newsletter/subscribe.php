@@ -3,6 +3,8 @@
 //if(Yii::$app->session->hasFlash('subscribeStatus')) {
 //   echo  Yii::$app->session->getFlash('subscribeStatus');
 //}
+
+$this->title = 'Підпишіться на новини!';
 if($model->hasErrors()) {
     echo '<pre>';
     print_r($model->getErrors());
