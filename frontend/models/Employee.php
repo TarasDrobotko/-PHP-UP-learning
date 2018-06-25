@@ -58,5 +58,11 @@ class Employee extends Model
                 . " '{$this->position}', '{$this->identificationCode}')";
                   return Yii::$app->db->createCommand($sql)->execute();
     }
+    
+    public static function find() {
+        
+          $sql = 'SELECT * FROM collaborator';
+          return   Yii::$app->db->createCommand($sql)->queryAll();
+}
 }
 
