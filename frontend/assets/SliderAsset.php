@@ -20,5 +20,6 @@ class SliderAsset extends AssetBundle {
     
     public $depends = [
         'yii\web\JqueryAsset',
+      
     ];
 }

@@ -4,9 +4,9 @@
 use frontend\assets\GalleryAsset;
 
 GalleryAsset::register($this);
-$this->registerJsFile('@web/js/gallery/scripts.js', ['depends' => [
-    GalleryAsset::className()
-        ]]);
+//$this->registerCssFile('@web/css/blog/scripts.js', ['depends' => [
+//    GalleryAsset::className()
+//        ]]);
 ?>
 <h1>Gallery</h1>
 
