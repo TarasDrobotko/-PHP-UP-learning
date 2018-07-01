@@ -22,18 +22,11 @@ class EmployeeController extends Controller {
     
      public function actionRegister() {
          $model = new Employee();
-         $formData = Yii::$app->request->post();
+        Yii::$app->request->post();
         $model->scenario = Employee::SCENARIO_EMPLOYEE_REGISTER;
         
-        if (Yii::$app->request->isPost) { 
-//            if(($formData['birth']=='')) {$formData['birth'] = 'null'; }
-//             echo '<pre>';
-//                print_r($formData);
-//                echo '<pre>';die;
-           $model->attributes = $formData;
-//            echo '<pre>';
-//                print_r($model->attributes);
-//                echo '<pre>';die;
+        if ($model->load(Yii::$app->request->post())) { 
+
             if ($model->validate() && $model->save()) {
                 Yii::$app->session->setFlash('success', 'Registered!');
             }
@@ -43,12 +36,10 @@ class EmployeeController extends Controller {
     
      public function actionUpdate() {
            $model = new Employee();
-         $formData = Yii::$app->request->post();
-        $model->scenario = Employee::SCENARIO_EMPLOYEE_UPDATE;
-        $model->attributes = $formData;
         
-        if (Yii::$app->request->isPost) { 
-          $model->attributes = $formData;
+        $model->scenario = Employee::SCENARIO_EMPLOYEE_UPDATE;
+        
+        if ($model->load(Yii::$app->request->post())) { 
             if ($model->validate() && $model->save()) {
                 Yii::$app->session->setFlash('success', 'Data updated!');
             }
