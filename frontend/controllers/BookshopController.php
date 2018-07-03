@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use frontend\models\Book;
+use frontend\models\Publisher;
 use Yii;
 
 class BookshopController extends \yii\web\Controller {
@@ -23,13 +24,15 @@ class BookshopController extends \yii\web\Controller {
     }
 
     public function actionCreate() {
-//        $book = new Book();
-//        if ($book->load(Yii::$app->request->post()) && $book->save()) {
-//                Yii::$app->session->setFlash('success', 'Saved!');
-//                return $this->redirect(['bookshop/index']);
-//            }
-//            
+        $book = new Book();
+        $publishers = Publisher::getList();
+        if ($book->load(Yii::$app->request->post()) && $book->save()) {
+                Yii::$app->session->setFlash('success', 'Saved!');
+                return $this->redirect(['bookshop/index']);
+            }
+            
         return $this->render('create', ['book' => $book,
+            'publishers' => $publishers,
         ]);
     }
 
