@@ -12,13 +12,13 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'enableCsrfValidation' => false,
+            'enableCsrfValidation' => true,
         ],
-//        'user' => [
-//            'identityClass' => 'frontend\models\User',
-//            'enableAutoLogin' => true,
-//            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
-//        ],
+        'user' => [
+            'identityClass' => 'frontend\models\User',
+            'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+        ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',

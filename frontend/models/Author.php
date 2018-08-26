@@ -26,10 +26,16 @@ class Author extends \yii\db\ActiveRecord
     public function rules() {
         return [
             [['first_name', 'last_name'], 'required'],
-            [['first_name', 'last_name'], 'string', 'max' => 25],
+            [['first_name', 'last_name'], 'string', 'max' => 125],
             [['birthdate'], 'date', 'format' => 'php:Y-m-d'],
              [['rating'], 'integer'],
         ];
+    }
+    
+     public function beforeValidate()
+    {
+        $this->first_name = strip_tags($this->first_name);
+        return parent::beforeValidate();
     }
     /**
      * @inheritdoc
