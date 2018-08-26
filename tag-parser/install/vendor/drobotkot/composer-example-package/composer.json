@@ -1,0 +1,21 @@
+{
+    "name": "drobotkot/composer-example-package",
+    "description": "Example project",
+    "type": "library",
+    "require": {
+        "php": "^7.0"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Taras Drobotko",
+            "email": "drobotkot@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "drobotko\\parser\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

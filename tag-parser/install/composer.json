@@ -1,0 +1,6 @@
+{
+   "require": {
+       "drobotkot/composer-example-package" : "^1.0.0"
+       }
+}
+   
